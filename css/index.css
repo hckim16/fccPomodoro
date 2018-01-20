@@ -1,0 +1,35 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1513544705284-99373737fab6?auto=format&fit=crop&w=2901&q=80");
+    background-size: 100%;
+    background-color: white;
+   
+}
+
+.block{
+    background: rgba(0,0,0,.6);
+    color: white;
+    padding: 20px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
+    
+}
+
+.spacer{
+    padding: 3%;
+}
+
+h2{
+    display: inline;
+}
+
+#start, #reset {
+    margin: 15px;
+}
+
+.custom{
+    color: black;
+    background-color: white;
+    
+}
