@@ -7,8 +7,8 @@ $(function() {
 
     $("#start").click(function() {
         var counter = setInterval(timer, 1000);
-        count *= 1;
-        count2 *= 1;
+        count *= 60;
+        count2 *= 60;
 
         function timer() {
             $("#start, #m5Time, #m5Break, #a5Time, #a5Break, #title1, #reset, #breakNum").hide();
