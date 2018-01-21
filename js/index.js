@@ -1,9 +1,8 @@
 $(function() {
-    var buzzer = $("#buzzer");
+    var buzzer = $("#buzzer")[0];
     var count = parseInt($("#num").html());
     var count2 = parseInt($("#breakNum").html());
 
-    /*buzzer.play();*/
     $("#session").hide();
 
     $("#start").click(function() {
@@ -15,16 +14,13 @@ $(function() {
             $("#start, #m5Time, #m5Break, #a5Time, #a5Break, #title1, #reset, #breakNum").hide();
             $("#session").show();
             $("#session").html("Session Time: ");
-            
             count -= 1;
-            
-            if (count === 0) {
+            if(count === 0){
                 buzzer.play();
                 clearInterval(counter);
                 $("#num").hide();
-                var counter2 = setInterval(breakTimer, 1000);
+                var startBreak = setInterval(breakTimer, 1000);
             }
-            
             $("#num").html(count);
             
             if(count % 60 >= 10){
@@ -37,16 +33,19 @@ $(function() {
             function breakTimer(){
                 $("#session").html("Break Time: ");
                 $("#breakNum").show();
+                
                 count2 -= 1;
-                if(count === 0){
-                    clearInterval(counter2);
+                
+                if(count2 === 0){
+                    clearInterval(startBreak);
                     buzzer.play();
                     $("#reset").show();
                     $("#breakNum, #session").hide();
                 }
+                
                 $("#breakNum").html(count2);
                 
-                if(count % 60 >= 10){
+                if(count2 % 60 >= 10){
                     $("#breakNum").html(Math.floor(count2/60) + ":" + count2 % 60)
                 }
                 else{
@@ -57,7 +56,7 @@ $(function() {
     });
 
     $("#m5Time").click(function() {
-        if (count > 0) {
+        if (count > 5) {
             count -= 5;
             $("#num").html(count);
         }
@@ -72,17 +71,17 @@ $(function() {
     });
 
     $("#m5Break").click(function() {
-        if (count > 0) {
-            count -= 5;
-            $("#breakNum").html(count);
+        if (count2 > 5) {
+            count2 -= 5;
+            $("#breakNum").html(count2);
         }
         event.preventDefault();
     });
 
     $("#a5Break").click(function() {
 
-        count += 5;
-        $("#breakNum").html(count);
+        count2 += 5;
+        $("#breakNum").html(count2);
         event.preventDefault();
     });
 

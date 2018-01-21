@@ -2,7 +2,6 @@ body{
     background-image: url("https://images.unsplash.com/photo-1513544705284-99373737fab6?auto=format&fit=crop&w=2901&q=80");
     background-size: 100%;
     background-color: white;
-   
 }
 
 .block{
@@ -26,10 +25,4 @@ h2{
 
 #start, #reset {
     margin: 15px;
-}
-
-.custom{
-    color: black;
-    background-color: white;
-    
 }
